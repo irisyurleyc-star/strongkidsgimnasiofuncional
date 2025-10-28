@@ -153,4 +153,3 @@ Si tienes problemas:
 4. Abre la consola del navegador (F12) para ver errores
 
 ¡Tu landing page estará lista para impresionar a los padres! 🎉
-

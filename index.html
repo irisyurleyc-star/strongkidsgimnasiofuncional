@@ -6,6 +6,12 @@
     <title>StrongKids Play Gym - Fitness Funcional para Niños</title>
     <meta name="description" content="Gimnasio especializado en fitness funcional para niños. Desarrollo integral a través del ejercicio divertido y seguro.">
     
+    <!-- Metadatos adicionales para videos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -47,7 +53,7 @@
                 <!-- Logo -->
                 <div class="flex items-center space-x-2">
                     <!-- Logo con imagen real -->
-                    <img src="images/WhatsApp Image 2025-10-26 at 1.12.31 PM.jpeg" alt="StrongKids Play Gym Logo" class="w-12 h-12 rounded-lg object-cover">
+                    <img src="assets/img/logo-strongkids.jpg" alt="StrongKids Play Gym Logo" class="w-12 h-12 rounded-lg object-cover shadow-md">
                     <span class="text-xl font-bold text-gray-800">StrongKids</span>
                 </div>
                 
@@ -82,11 +88,13 @@
     </header>
 
     <!-- Sección Hero -->
-    <section id="inicio" class="pt-20 bg-gradient-to-br from-strong-blue via-strong-green to-strong-yellow min-h-screen flex items-center relative">
+    <section id="inicio" class="pt-20 bg-gradient-to-br from-strong-blue via-strong-green to-strong-yellow min-h-screen flex items-center relative cursor-monster">
         <!-- Video de fondo -->
         <div class="absolute inset-0 overflow-hidden">
-            <video autoplay muted loop class="w-full h-full object-cover opacity-30">
-                <source src="images/WhatsApp Video 2025-10-09 at 3.37.32 PM.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-30" preload="metadata">
+                <source src="./video nino.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+                <source src="assets/videos/strongkids-gym-video.webm" type="video/webm; codecs=vp8,vorbis">
+                <source src="assets/videos/strongkids-gym-video.ogv" type="video/ogg; codecs=theora,vorbis">
                 Tu navegador no soporta videos HTML5.
             </video>
         </div>
@@ -123,8 +131,10 @@
             
             <div class="max-w-4xl mx-auto">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                    <video controls class="w-full h-auto" poster="">
-                        <source src="images/WhatsApp Video 2025-10-09 at 3.37.32 PM.mp4" type="video/mp4">
+                    <video controls preload="metadata" class="w-full h-auto" poster="assets/img/video-poster.svg">
+                        <source src="./video nino.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+                        <source src="assets/videos/strongkids-gym-video.webm" type="video/webm; codecs=vp8,vorbis">
+                        <source src="assets/videos/strongkids-gym-video.ogv" type="video/ogg; codecs=theora,vorbis">
                         Tu navegador no soporta videos HTML5.
                     </video>
                     <!-- Overlay con información -->
@@ -340,21 +350,20 @@
         </div>
     </footer>
 
-    <!-- Chatbot Flotante -->
-    <!-- 
-    ESPACIO RESERVADO PARA INTEGRACIÓN DEL CHATBOT
-    Aquí se debe integrar el widget del chatbot que debe ser un ícono flotante
-    pegado a la esquina inferior derecha de la pantalla.
+ 
     
-    Ejemplo de integración:
-    <div id="chatbot-widget" class="fixed bottom-6 right-6 z-50">
-        <button class="w-14 h-14 bg-gradient-to-r from-strong-blue to-strong-green rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-110">
-            <i class="fas fa-comments text-white text-xl"></i>
-        </button>
-    </div>
-    -->
+    <!-- Chatbot Container -->
+    
 
+    <!-- Sonidos del Chatbot -->
+    <script src="assets/sounds/chatbot-open.js"></script>
+    
     <!-- JavaScript -->
     <script src="script.js"></script>
+    
+    <!-- Chatbot Chatbase -->
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="zxVGO4PYweGgfa4czMAVC";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
 </body>
 </html>
